@@ -7,7 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 
-<div>
+<div align="center">
     <table>
         <th>
         <td><a href="${pageContext.servletContext.contextPath}/index">Домой</a>*</td>
