@@ -8,4 +8,7 @@
     <definition name="home" extends="base">
         <put-attribute name="body" value="/WEB-INF/tiles/jsp/home.jsp" />
     </definition>
+    <definition name="userNotFound" extends="base">
+        <put-attribute name="body" value="/WEB-INF/tiles/jsp/userNotFound.jsp" />
+    </definition>
 </tiles-definitions>

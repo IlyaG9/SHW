@@ -5,7 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
 
 <div id="menu">
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -17,12 +17,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">SHome</a>
+                <a class="navbar-brand" href="${pageContext.servletContext.contextPath}/">SHome</a>
             </div>
             <div class="btn-group navbar-right">
                 <button id="signin" type="button" class="btn btn-default navbar-btn">Вход</button>
-                <button id="registartion" type="button" class="btn btn-default navbar-btn">Регистрация</button>
-                
+                <button id="registartion" type="button" class="btn btn-default navbar-btn">Регистрация</button>               
             </div>
         </div>
     </nav>
