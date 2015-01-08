@@ -14,6 +14,8 @@ public interface TemperatureService {
     public Double getBoilerTemperature();
 
     public Double getLiveRoomTemperature();
-    
+
     public Date getLastUpdateTemperature();
+
+    public double getOpenweathermapTemperature();
 }

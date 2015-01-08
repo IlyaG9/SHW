@@ -6,7 +6,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
 <div >
 Home Page
-    H:<c:out value="${hole}"/> LR:<c:out value="${liveroom}"/> B:<c:out value="${boiler}"/>
 </div>
 
 

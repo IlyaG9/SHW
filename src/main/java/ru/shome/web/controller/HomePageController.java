@@ -18,10 +18,7 @@ public class HomePageController {
     TemperatureService temperatureService;
 
     @RequestMapping(value = {"/", "/home", "/index"})
-    public String showHomePage(Model model) {
-        model.addAttribute("boiler", temperatureService.getBoilerTemperature());
-        model.addAttribute("liveroom", temperatureService.getLiveRoomTemperature());
-        model.addAttribute("hole", temperatureService.getHoleTemperature());
+    public String showHomePage() {
         return "home";
     }
      @RequestMapping(value = "/temperature")
@@ -29,6 +26,7 @@ public class HomePageController {
         model.addAttribute("boiler", temperatureService.getBoilerTemperature());
         model.addAttribute("liveroom", temperatureService.getLiveRoomTemperature());
         model.addAttribute("hole", temperatureService.getHoleTemperature());
+        model.addAttribute("openweathermap", temperatureService.getOpenweathermapTemperature());
         return "temperature";
     }
      @RequestMapping(value = "/webcam")

@@ -17,6 +17,7 @@
         <jstl.version>1.2</jstl.version>
         <jsoup.version>1.7.2</jsoup.version>
         <spring.security.version>3.2.5.RELEASE</spring.security.version>
+        <gson.version>2.3.1</gson.version>
     </properties>
 
     <dependencies>
@@ -97,6 +98,13 @@
             <artifactId>jsoup</artifactId>
             <version>${jsoup.version}</version>
         </dependency>
+        <!-- GSON -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>${gson.version}</version>
+        </dependency>
+
     </dependencies>
 
     <build>
