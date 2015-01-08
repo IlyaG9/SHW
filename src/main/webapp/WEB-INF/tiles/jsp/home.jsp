@@ -3,9 +3,10 @@
     Created on : 04.01.2015, 14:12:43
     Author     : @author ILYA_GOLOVACHEV.
 --%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
 <div >
-    WEB CAM</br>
-   <!-- <img src="http://shweb.dlinkddns.com:8081?action=stream"/> -->
-   <img src="http://192.168.0.99:8081?action=stream"/>
+Home Page
+    H:<c:out value="${hole}"/> LR:<c:out value="${liveroom}"/> B:<c:out value="${boiler}"/>
 </div>
+
+

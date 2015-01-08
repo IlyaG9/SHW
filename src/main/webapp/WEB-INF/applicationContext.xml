@@ -6,6 +6,18 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
 ">
     <!-- Поиск компонентов @Service, @Component-->
-    <context:component-scan base-package="ru.shome.web"/>
+    <context:component-scan base-package="ru.shome.web"/>  
+    <bean id="property" class="ru.shome.web.beans.Property" scope="singleton">
+        <property name="arduinoURL" value="http://192.168.0.177"/>
+        <property name="programTitle" value="Smart Home System"/>
+        <property name="runUpdateTime" value="2000"/>
+        <property name="updateTime" value="3000"/>
+        <property name="temperatureBoilerOn" value="25"/>
+        <property name="gmailAccaunt" value="ilya.golovachev9@gmail.com"/>
+        <property name="gmailAccauntPassword" value="152909qw"/>
+        <property name="smsruAccauntToSendSMS" value="e478b263-1a42-bde4-6d97-ffadbfcc10bd+79787905941@sms.ru"/>
+        <property name="hoursToSendReports" value="10"/>
+    </bean>
+    <bean id="temperatureService" class="ru.shome.web.services.impl.TemperatureServiceImpl" init-method="updateTemperature"></bean>
 
 </beans>
