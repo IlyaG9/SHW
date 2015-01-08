@@ -38,4 +38,16 @@
         <filter-name>encodingFilter</filter-name> 
         <url-pattern>/*</url-pattern> 
     </filter-mapping>
+    <!-- Настройки Spring Security-->
+    <filter>    
+        <filter-name>springSecurityFilterChain</filter-name>    
+        <!-- DelegatingFilterProxy делегирует фильтрацию
+         объекту FilterChainProxy, 
+        который автоматически настраиваеться при http auto-config="true" -->
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class> 
+    </filter>
+     <filter-mapping>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 </web-app>

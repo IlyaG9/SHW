@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns:beans="http://www.springframework.org/schema/beans"  
+             xmlns="http://www.springframework.org/schema/security" 
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   
+             xsi:schemaLocation="http://www.springframework.org/schema/beans  
+  http://www.springframework.org/schema/beans/spring-beans-3.2.xsd   
+ http://www.springframework.org/schema/security    
+http://www.springframework.org/schema/security/spring-security-3.2.xsd">
+    
+    <http auto-config="true">
+        <logout logout-url="/logout"/>
+        <intercept-url pattern="/index" requires-channel="http"/>
+        <intercept-url pattern="/registration" requires-channel="https"/>
+        <intercept-url pattern="/temperature/**" access="ROLE_ADMIN"/>
+        <form-login login-processing-url="/j_spring_security_check"
+        login-page="/signIn" 
+        authentication-failure-url="/userNotFound"/>
+        <remember-me key="Key" token-validity-seconds="2629743"/>
+    </http>
+    <user-service id="userService">
+        <user name="admin" password="admin" authorities="ROLE_ADMIN, ROLE_MANAGER"/>
+        <user name="manager" password="manager" authorities="ROLE_MANAGER"/>
+    </user-service>
+    <authentication-manager>
+        <authentication-provider user-service-ref="userService"/>
+    </authentication-manager>
+    <beans:bean class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler"/>
+</beans:beans>

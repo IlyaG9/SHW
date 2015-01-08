@@ -11,4 +11,7 @@ $(document).ready(function() {
     $('#registartion').click(function() {
     window.location.href="./registration";
     });
+    $('#logout').click(function() {
+    window.location.href="./logout";
+    });
 });

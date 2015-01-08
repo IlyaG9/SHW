@@ -88,3 +88,8 @@ body {
 .popup .close_window:active {
 	background: #8f9be0;
 }
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}

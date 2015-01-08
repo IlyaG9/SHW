@@ -11,10 +11,16 @@
     <definition name="userNotFound" extends="base">
         <put-attribute name="body" value="/WEB-INF/tiles/jsp/userNotFound.jsp" />
     </definition>
+    <definition name="registration" extends="base">
+        <put-attribute name="body" value="/WEB-INF/tiles/jsp/registration.jsp" />
+    </definition>
      <definition name="temperature" extends="base">
         <put-attribute name="body" value="/WEB-INF/tiles/jsp/temperature.jsp" />
     </definition>
     <definition name="webcam" extends="base">
         <put-attribute name="body" value="/WEB-INF/tiles/jsp/webcam.jsp" />
+    </definition>
+    <definition name="signIn" extends="base">
+        <put-attribute name="body" value="/WEB-INF/tiles/jsp/signIn.jsp" />
     </definition>
 </tiles-definitions>

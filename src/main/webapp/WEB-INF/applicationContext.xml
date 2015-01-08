@@ -19,5 +19,5 @@
         <property name="hoursToSendReports" value="10"/>
     </bean>
     <bean id="temperatureService" class="ru.shome.web.services.impl.TemperatureServiceImpl" init-method="updateTemperature"></bean>
-
+    <import resource="spring-security.xml"/>
 </beans>

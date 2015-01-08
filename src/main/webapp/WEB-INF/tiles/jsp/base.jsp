@@ -6,6 +6,7 @@
 
 <%@ page contentType="text/html; charset=utf-8"%> 
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -36,13 +37,13 @@
             <div class="close_window">x</div>
             <div class="container">
 
-                <form class="form-signin" action="${pageContext.servletContext.contextPath}/login" method="POST">
+                <form  action="${pageContext.servletContext.contextPath}/j_spring_security_check" method="POST">
                     <h2 class="form-signin-heading">Вход</h2>
-                    <input name="name" placeholder="Логин" required autofocus><br></br>
-                    <input name="password" type="password" placeholder="Пароль" required>
+                    <input name="j_username" placeholder="Логин" required autofocus><br></br>
+                    <input name="j_password" type="password" placeholder="Пароль" required>
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" value="remember-me"> Запомнить меня
+                            <input type="checkbox" name="_spring_security_ remember_me" value="remember-me"> Запомнить меня
                         </label>
                     </div>
                     <button class="btn btn-lg btn-primary " type="submit">Вход</button>
