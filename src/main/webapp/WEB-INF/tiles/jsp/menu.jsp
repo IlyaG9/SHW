@@ -12,10 +12,9 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">              
-                <a class="navbar-brand" href="${pageContext.servletContext.contextPath}/">SHome</a>
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="${pageContext.servletContext.contextPath}/">Домой</a></li>               
-                    <li><a href="${pageContext.servletContext.contextPath}/webcam">Веб камера</a></li>
+                    <li><a id="href-webcam" href="${pageContext.servletContext.contextPath}/webcam">Веб камера</a></li>
                         <security:authorize access="hasRole('ROLE_ADMIN')">
                         <li><a href="${pageContext.servletContext.contextPath}/temperature">Температура</a></li>
                         </security:authorize>

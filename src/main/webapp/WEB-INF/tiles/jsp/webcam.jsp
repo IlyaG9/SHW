@@ -5,8 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<div>
+<div id="webcam">
     Веб камера<br>
     <img src="http://192.168.0.99:8081?action=stream"/>
-    <!--  <img src="http://shweb.dlinkddns.com:8081?action=stream"/>-->
+   <!-- <img src="http://shweb.dlinkddns.com:8081?action=stream"/>-->
 </div>

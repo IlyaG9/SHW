@@ -10,7 +10,6 @@ http://www.springframework.org/schema/security/spring-security-3.2.xsd">
     <http auto-config="true">
         <logout logout-url="/logout"/>
         <intercept-url pattern="/index" requires-channel="http"/>
-        <intercept-url pattern="/registration" requires-channel="https"/>
         <intercept-url pattern="/temperature/**" access="ROLE_ADMIN"/>
         <form-login login-processing-url="/j_spring_security_check"
         login-page="/signIn" 

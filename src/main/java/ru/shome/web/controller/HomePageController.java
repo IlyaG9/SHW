@@ -21,15 +21,19 @@ public class HomePageController {
     public String showHomePage() {
         return "home";
     }
-     @RequestMapping(value = "/temperature")
+
+    @RequestMapping(value = "/temperature")
     public String showTemperaturePage(Model model) {
         model.addAttribute("boiler", temperatureService.getBoilerTemperature());
         model.addAttribute("liveroom", temperatureService.getLiveRoomTemperature());
         model.addAttribute("hole", temperatureService.getHoleTemperature());
+        model.addAttribute("streetTemperature", temperatureService.getStreetTemperature());
+        model.addAttribute("streetHumidity", temperatureService.getStreetHumidity());
         model.addAttribute("openweathermap", temperatureService.getOpenweathermapTemperature());
         return "temperature";
     }
-     @RequestMapping(value = "/webcam")
+
+    @RequestMapping(value = "/webcam")
     public String showWebcamPage() {
         return "webcam";
     }

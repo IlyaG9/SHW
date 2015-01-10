@@ -30,6 +30,10 @@ public class TemperatureServiceImpl implements TemperatureService {
     private Double holeTemperature = 0.00;
     private Double boilerTemperature = 0.00;
     private Double liveRoomTemperature = 0.00;
+    private Double openweathermapTemperature = 0.00;
+    private Double streetTemperature = 0.00;
+    private Double streetHumidity = 0.00;
+
     private Date lastUpdateTemperature = null;
     @Autowired
     private Property property;
@@ -66,6 +70,12 @@ public class TemperatureServiceImpl implements TemperatureService {
             //T3
             Element t3 = document.select("t3").first();
             holeTemperature = Double.valueOf(t3.text());
+            //T4
+            Element t4 = document.select("t4").first();
+            streetTemperature = Double.valueOf(t4.text());
+            //Hum1
+            Element hum1 = document.select("hum1").first();
+            streetHumidity = Double.valueOf(hum1.text());
 
         } catch (IOException ex) {
             System.out.println("connect timed out");
@@ -80,6 +90,7 @@ public class TemperatureServiceImpl implements TemperatureService {
             @Override
             public void run() {
                 getSensorsValue();
+                updateOpenweathermapTemperature();
                 lastUpdateTemperature = new Date();
             }
         };
@@ -93,6 +104,10 @@ public class TemperatureServiceImpl implements TemperatureService {
 
     @Override
     public double getOpenweathermapTemperature() {
+        return openweathermapTemperature;
+    }
+
+    private void updateOpenweathermapTemperature() {
         HttpURLConnection urlConnection = null;
         BufferedReader reader = null;
         String resultJson = "";
@@ -123,6 +138,16 @@ public class TemperatureServiceImpl implements TemperatureService {
         Weather fromJson = gson.fromJson(resultJson, Weather.class);
         Double temp = fromJson.getMain().getTemp();
         //Температура в кельвинах
-        return temp + (-272.15);
+        openweathermapTemperature = temp + (-272.15);
+    }
+
+    @Override
+    public double getStreetTemperature() {
+        return streetTemperature;
+    }
+
+    @Override
+    public double getStreetHumidity() {
+        return streetHumidity;
     }
 }

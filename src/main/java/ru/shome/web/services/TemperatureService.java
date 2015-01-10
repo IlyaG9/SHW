@@ -18,4 +18,8 @@ public interface TemperatureService {
     public Date getLastUpdateTemperature();
 
     public double getOpenweathermapTemperature();
+
+    public double getStreetTemperature();
+
+    public double getStreetHumidity();
 }
