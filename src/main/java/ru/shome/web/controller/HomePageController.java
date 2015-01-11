@@ -1,5 +1,6 @@
 package ru.shome.web.controller;
 
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -34,7 +35,16 @@ public class HomePageController {
     }
 
     @RequestMapping(value = "/webcam")
-    public String showWebcamPage() {
+    public String showWebcamPage(HttpServletRequest request, Model model) {
+        String addr = request.getRemoteAddr();
+        addr=addr.replace(".", "/");
+        String[] split = addr.split("/");
+        
+        if ((split[0].equals("192")&& split[1].equals("168")) || (split[0].equals("127")&&split[1].equals("0"))) {
+            model.addAttribute("local", true);
+        } else {
+            model.addAttribute("local", false);
+        }
         return "webcam";
     }
 }

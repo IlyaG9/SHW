@@ -5,8 +5,13 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
 <div id="webcam">
     Веб камера<br>
-    <img src="http://192.168.0.99:8081?action=stream"/>
-   <!-- <img src="http://shweb.dlinkddns.com:8081?action=stream"/>-->
+    <c:if test="${local}">
+        <img src="http://192.168.0.99:8081?action=stream"/>
+    </c:if>
+    <c:if test="!${local}">
+        <img src="http://shweb.dlinkddns.com:8081?action=stream"/>
+    </c:if>
 </div>
