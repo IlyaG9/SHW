@@ -11,6 +11,7 @@
     <mvc:annotation-driven/>
     <!-- Определение расположения статического контента-->
     <mvc:resources mapping="/img/**" location="/WEB-INF/resourses/img/"/>
+    <mvc:resources mapping="/*.txt" location="/WEB-INF/resourses/txt/"/>
     <mvc:resources mapping="/css/**" location="/WEB-INF/resourses/css/"/>
     <mvc:resources mapping="/js/**" location="/WEB-INF/resourses/js/"/>
     <!-- Включение конфигурирования аннотациями-->

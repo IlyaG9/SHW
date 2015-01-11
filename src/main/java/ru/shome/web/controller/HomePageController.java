@@ -19,7 +19,10 @@ public class HomePageController {
     TemperatureService temperatureService;
 
     @RequestMapping(value = {"/", "/home", "/index"})
-    public String showHomePage() {
+    public String showHomePage(Model model) {
+        model.addAttribute("streetTemperature", temperatureService.getStreetTemperature());
+        model.addAttribute("streetHumidity", temperatureService.getStreetHumidity());
+        model.addAttribute("openweathermap", temperatureService.getOpenweathermapTemperature());
         return "home";
     }
 
@@ -37,10 +40,10 @@ public class HomePageController {
     @RequestMapping(value = "/webcam")
     public String showWebcamPage(HttpServletRequest request, Model model) {
         String addr = request.getRemoteAddr();
-        addr=addr.replace(".", "/");
+        addr = addr.replace(".", "/");
         String[] split = addr.split("/");
-        
-        if ((split[0].equals("192")&& split[1].equals("168")) || (split[0].equals("127")&&split[1].equals("0"))) {
+
+        if ((split[0].equals("192") && split[1].equals("168")) || (split[0].equals("127") && split[1].equals("0"))) {
             model.addAttribute("local", true);
         } else {
             model.addAttribute("local", false);

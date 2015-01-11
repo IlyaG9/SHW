@@ -2,10 +2,7 @@ package ru.shome.web.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import ru.shome.web.beans.User;
 import ru.shome.web.services.UserService;
 
 /**

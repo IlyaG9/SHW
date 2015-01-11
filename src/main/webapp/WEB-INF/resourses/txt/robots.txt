@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /webcam
+Allow: /temperature
+Allow: /index
