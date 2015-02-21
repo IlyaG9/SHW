@@ -14,6 +14,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
+        <meta http-equiv="refresh" content="60">
         <link rel="icon" href="${pageContext.servletContext.contextPath}/img/favicon.ico">
         <link href="${pageContext.servletContext.contextPath}/css/bootstrap.min.css" rel="stylesheet">
         <link href="${pageContext.servletContext.contextPath}/css/starter-template.css" rel="stylesheet">

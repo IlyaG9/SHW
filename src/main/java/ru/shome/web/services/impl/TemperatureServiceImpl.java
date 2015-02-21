@@ -90,8 +90,9 @@ public class TemperatureServiceImpl implements TemperatureService {
             @Override
             public void run() {
                 getSensorsValue();
-                updateOpenweathermapTemperature();
+              //  updateOpenweathermapTemperature();
                 lastUpdateTemperature = new Date();
+                System.out.println("Update Temperature");
             }
         };
         timer.scheduleAtFixedRate(ttask, property.getRunUpdateTime(), property.getUpdateTime());

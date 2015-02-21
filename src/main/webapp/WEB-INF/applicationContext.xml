@@ -18,7 +18,7 @@
         <property name="smsruAccauntToSendSMS" value="e478b263-1a42-bde4-6d97-ffadbfcc10bd+79787905941@sms.ru"/>
         <property name="hoursToSendReports" value="10"/>
     </bean>
-    <bean id="temperatureService" class="ru.shome.web.services.impl.TemperatureServiceImpl" init-method="updateTemperature"/>
     <bean id="SMSService" class="ru.shome.web.services.impl.SMSServiceImpl" init-method="startReport"/>
+        <bean id="temperatureService" class="ru.shome.web.services.impl.TemperatureServiceImpl" init-method="updateTemperature"/>
     <import resource="spring-security.xml"/>
 </beans>

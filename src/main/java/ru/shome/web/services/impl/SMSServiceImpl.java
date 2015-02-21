@@ -67,6 +67,7 @@ public class SMSServiceImpl implements SMSService {
         Date tomorrow = new Date(tomorrowLong);
         //Запускаем таймер, отчет будет приходить раз в сутки (86400000 миллисекунд)
         timer.scheduleAtFixedRate(ttask, tomorrow, 86400000);
+        
         sendSMS("System SHWeb started");
     }
 

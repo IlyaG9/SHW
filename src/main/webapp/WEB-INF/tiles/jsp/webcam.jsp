@@ -11,7 +11,5 @@
     <c:if test="${local}">
         <img src="http://192.168.0.99:8081?action=stream"/>
     </c:if>
-    <c:if test="!${local}">
         <img src="http://shweb.dlinkddns.com:8081?action=stream"/>
-    </c:if>
 </div>

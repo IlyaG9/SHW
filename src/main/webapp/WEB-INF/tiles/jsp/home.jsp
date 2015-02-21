@@ -9,19 +9,20 @@
 <div>
     <table id="temperatureTable">
         <tr>
-            <td>Температура на улице: </td>
+            <td>Температура на улице*: </td>
             <td><c:out value="${streetTemperature}"/> </td>
         </tr>
         <tr>
-            <td>Влажность  на улице: </td>
+            <td>Влажность  на улице*: </td>
             <td><c:out value="${streetHumidity}"/> %</td>
-        </tr>
-        <tr>
-            <td>Температура на openweathermap.org (Перевальное) </td>
-            <td><c:out value="${openweathermap}"/>  </td>
         </tr>
         <tr>
             <td><a href="${pageContext.servletContext.contextPath}/webcam">Веб камера</a> </td>
         </tr>
     </table>
+  
+    <span class="label label-default down">* Температура и влажность считываюься с датчика DHT11. 
+        Согласно спецификации, датчик может считывать температуру в диапазоне 0-50(±2)℃ и
+        влажность 20-90(±5)%RH
+    </span>
 </div>
