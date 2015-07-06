@@ -3,7 +3,7 @@ package ru.shome.web.services;
 import java.util.Date;
 
 /**
- * Smart Homne Project. ilya.golovachev9@gmail.com
+ * Smart Home Project. ilya.golovachev9@gmail.com
  *
  * @author ILYA_GOLOVACHEV.
  */

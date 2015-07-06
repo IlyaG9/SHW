@@ -4,7 +4,7 @@ package ru.shome.web.services;
 import ru.shome.web.beans.User;
 
 /**
- * Smart Homne Project.
+ * Smart Home Project.
  * ilya.golovachev9@gmail.com
  * @author ILYA_GOLOVACHEV.
  */

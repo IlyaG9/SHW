@@ -18,17 +18,18 @@ import javax.mail.internet.MimeMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import ru.shome.web.beans.Property;
+import ru.shome.web.services.BaseService;
 import ru.shome.web.services.SMSService;
 import ru.shome.web.services.TemperatureService;
 import ru.shome.web.system.logger.SLogger;
 import ru.shome.web.system.logger.SLogger.ErrLevel;
 
 /**
- * Smart Homne Project. ilya.golovachev9@gmail.com
+ * Smart Home Project. ilya.golovachev9@gmail.com
  *
  * @author ILYA_GOLOVACHEV.
  */
-public class SMSServiceImpl implements SMSService {
+public class SMSServiceImpl extends BaseService implements SMSService {
 
 	private Properties props = null;
 	@Autowired
@@ -42,6 +43,7 @@ public class SMSServiceImpl implements SMSService {
 		props.put("mail.smtp.auth", "true");
 		props.put("mail.smtp.host", "smtp.gmail.com");
 		props.put("mail.smtp.port", "587");
+		ServiceFactory.reqisterService(this);
 	}
 
 	@Override
@@ -101,6 +103,11 @@ public class SMSServiceImpl implements SMSService {
 			SLogger.getSLogger().log(ErrLevel.ERROR, SMSServiceImpl.class,
 					ex.getMessage());
 		}
+	}
+
+	@Override
+	public void run() {
+		startReport();
 	}
 
 }

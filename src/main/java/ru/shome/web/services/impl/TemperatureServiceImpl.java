@@ -18,6 +18,7 @@ import org.springframework.stereotype.Service;
 
 import ru.shome.web.beans.Property;
 import ru.shome.web.beans.Weather;
+import ru.shome.web.services.BaseService;
 import ru.shome.web.services.TemperatureService;
 import ru.shome.web.system.logger.SLogger;
 import ru.shome.web.system.logger.SLogger.ErrLevel;
@@ -30,7 +31,7 @@ import com.google.gson.Gson;
  * @author ILYA_GOLOVACHEV.
  */
 @Service
-public class TemperatureServiceImpl implements TemperatureService {
+public class TemperatureServiceImpl extends BaseService implements TemperatureService {
 
 
 	private Double holeTemperature = 0.00;
@@ -46,7 +47,7 @@ public class TemperatureServiceImpl implements TemperatureService {
 
 	public TemperatureServiceImpl() {
 		super();
-
+		ServiceFactory.reqisterService(this);
 	}
 
 	@Override
@@ -157,5 +158,11 @@ public class TemperatureServiceImpl implements TemperatureService {
 	@Override
 	public double getStreetHumidity() {
 		return streetHumidity;
+	}
+
+	@Override
+	public void run() {
+		updateTemperature();
+		
 	}
 }
