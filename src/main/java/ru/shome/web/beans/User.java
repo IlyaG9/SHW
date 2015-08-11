@@ -3,130 +3,185 @@ package ru.shome.web.beans;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+
 /**
- * Smart Homne Project. ilya.golovachev9@gmail.com
+ * Smart Home Project. ilya.golovachev9@gmail.com
  *
  * @author ILYA_GOLOVACHEV.
  */
+@Entity
+@Table(name = "users")
 public class User implements Serializable {
 
-    private Long id;
-    private String firstName;
-    private String secondName;
-    private Date birthdate;
-    private String email;
-    private Boolean active;
-    private Boolean admin;
-    private String password;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
-    public User(String firstName, String password) {
-        this.firstName = firstName;
-        this.password = password;
-    }
+	@Id
+	@Column(name = "user_id")
+	private Long id;
 
-    public User(String firstName, String email, String password) {
-        this.firstName = firstName;
-        this.email = email;
-        this.password = password;
-    }
+	@Column(name = "first_name")
+	private String firstName;
 
-    public User(Long id, String firstName, String secondName, Date birthdate, String email, Boolean active, Boolean admin, String password) {
-        this.id = id;
-        this.firstName = firstName;
-        this.secondName = secondName;
-        this.birthdate = birthdate;
-        this.email = email;
-        this.active = active;
-        this.admin = admin;
-        this.password = password;
-    }
+	@Column(name = "second_name")
+	private String secondName;
 
-    public User(String firstName, String secondName, Date birthdate, String email, Boolean active, Boolean admin, String password) {
-        this.firstName = firstName;
-        this.secondName = secondName;
-        this.birthdate = birthdate;
-        this.email = email;
-        this.active = active;
-        this.admin = admin;
-        this.password = password;
-    }
+	@Column(name = "birthdate")
+	@Temporal(javax.persistence.TemporalType.DATE)
+	private Date birthdate;
+	
+	@Column(name = "email")
+	private String email;
+	
+	@Column(name = "active")
+	private Boolean active;
+	
+	@Column(name = "admin")
+	private Boolean admin;
+	
+	@Column(name = "password")
+	private String password;
+	
+	@Column(name = "login",unique = true)
+	private String login;
 
-    public String getPassword() {
-        return password;
-    }
+	public User(String firstName, String password) {
+		this.firstName = firstName;
+		this.password = password;
+	}
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+	public User(String firstName, String email, String password) {
+		this.firstName = firstName;
+		this.email = email;
+		this.password = password;
+	}
 
-    public Long getId() {
-        return id;
-    }
+	public User(Long id, String firstName, String secondName, Date birthdate,
+			String email, Boolean active, Boolean admin, String password) {
+		this.id = id;
+		this.firstName = firstName;
+		this.secondName = secondName;
+		this.birthdate = birthdate;
+		this.email = email;
+		this.active = active;
+		this.admin = admin;
+		this.password = password;
+	}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public User(String firstName, String secondName, Date birthdate,
+			String email, Boolean active, Boolean admin, String password) {
+		this.firstName = firstName;
+		this.secondName = secondName;
+		this.birthdate = birthdate;
+		this.email = email;
+		this.active = active;
+		this.admin = admin;
+		this.password = password;
+	}
 
-    public String getFirstName() {
-        return firstName;
-    }
+	
+	public String getLogin() {
+		return login;
+	}
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
+	public void setLogin(String login) {
+		this.login = login;
+	}
 
-    public String getSecondName() {
-        return secondName;
-    }
+	public Boolean getActive() {
+		return active;
+	}
 
-    public void setSecondName(String secondName) {
-        this.secondName = secondName;
-    }
+	public Boolean getAdmin() {
+		return admin;
+	}
 
-    public Date getBirthdate() {
-        return birthdate;
-    }
+	public String getPassword() {
+		return password;
+	}
 
-    public void setBirthdate(Date birthdate) {
-        this.birthdate = birthdate;
-    }
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
-    public String getEmail() {
-        return email;
-    }
+	public Long getId() {
+		return id;
+	}
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public Boolean isActive() {
-        return active;
-    }
+	public String getFirstName() {
+		return firstName;
+	}
 
-    public void setActive(Boolean active) {
-        this.active = active;
-    }
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
 
-    public Boolean isAdmin() {
-        return admin;
-    }
+	public String getSecondName() {
+		return secondName;
+	}
 
-    public void setAdmin(Boolean admin) {
-        this.admin = admin;
-    }
+	public void setSecondName(String secondName) {
+		this.secondName = secondName;
+	}
 
-    @Override
-    public boolean equals(Object o) {
-        return ((User) o).getFirstName().equals(firstName) && ((User) o).getPassword().equals(password);
-    }
+	public Date getBirthdate() {
+		return birthdate;
+	}
 
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        int hash1 = 97 * hash + (this.firstName != null ? this.firstName.hashCode() : 0);
-        int hash2 = 97 * hash + (this.password != null ? this.password.hashCode() : 0);
-        hash += hash1 + hash2;
-        return hash;
-    }
+	public void setBirthdate(Date birthdate) {
+		this.birthdate = birthdate;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public Boolean isActive() {
+		return active;
+	}
+
+	public void setActive(Boolean active) {
+		this.active = active;
+	}
+
+	public Boolean isAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(Boolean admin) {
+		this.admin = admin;
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		return ((User) o).getFirstName().equals(firstName)
+				&& ((User) o).getPassword().equals(password);
+	}
+
+	@Override
+	public int hashCode() {
+		int hash = 5;
+		int hash1 = 97 * hash
+				+ (this.firstName != null ? this.firstName.hashCode() : 0);
+		int hash2 = 97 * hash
+				+ (this.password != null ? this.password.hashCode() : 0);
+		hash += hash1 + hash2;
+		return hash;
+	}
 
 }

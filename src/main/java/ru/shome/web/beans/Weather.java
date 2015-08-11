@@ -1,7 +1,7 @@
 package ru.shome.web.beans;
 
 /**
- * Smart Homne Project. ilya.golovachev9@gmail.com
+ * Smart Home Project. ilya.golovachev9@gmail.com
  *
  * @author ILYA_GOLOVACHEV.
  */

@@ -3,7 +3,7 @@ package ru.shome.web.beans;
 import java.util.Date;
 
 /**
- * Smart Homne Project.
+ * Smart Home Project.
  * ilya.golovachev9@gmail.com
  *
  * @author ILYA_GOLOVACHEV.

@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import ru.shome.web.services.UserService;
 
 /**
- * Smart Homne Project. ilya.golovachev9@gmail.com
+ * Smart Home Project. ilya.golovachev9@gmail.com
  *
  * @author ILYA_GOLOVACHEV.
  */

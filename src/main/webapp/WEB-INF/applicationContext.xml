@@ -24,5 +24,6 @@
 	<bean id="ipSetServise" class="ru.shome.web.services.impl.IpSetServiceImpl" />
 
 
+	<import resource="db.xml" />
 	<import resource="spring-security.xml" />
 </beans>

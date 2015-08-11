@@ -1,48 +1,52 @@
 package ru.shome.web.dao.impl;
 
-import java.util.ArrayList;
-import java.util.Date;
-import org.springframework.stereotype.Service;
+import java.util.List;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.classic.Session;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
 import ru.shome.web.beans.User;
 import ru.shome.web.dao.UserDao;
 
 /**
- * Smart Homne Project. ilya.golovachev9@gmail.com
+ * Smart Home Project. ilya.golovachev9@gmail.com
  *
  * @author ILYA_GOLOVACHEV.
  */
-@Service
+@Repository
 public class UserDaoImpl implements UserDao {
 
-    private final ArrayList<User> base = new ArrayList<User>();
+	private SessionFactory sessionFactory;
 
-    public UserDaoImpl() {
-        base.add(new User("Илья", "ilya.golovachev9@gmail.com", "pass"));
-        for (long i = 1; i <= 10; i++) {
-            base.add(new User(i, "FirtsName " + i, "SecondName " + i, new Date(), "Email " + i, true, false, "Password1"));
-        }
-    }
+	@Autowired
+	public UserDaoImpl(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
 
-    @Override
-    public User getUser(String firstName) {
-        User user = null;
-        for (User u : base) {
-            if (u.getFirstName().equals(firstName)) {
-                user = u;
-            }
-        }
-        return user;
-    }
+	private Session getCurrentSession() {
+		return sessionFactory.getCurrentSession();
+	}
 
-    @Override
-    public Boolean isUserValid(User user) {
-        boolean result = false;
-        for (User u : base) {
-            if (u.equals(user)) {
-                result = true;
-            }
-        }
-        return result;
-    }
+	@SuppressWarnings("unchecked")
+	@Override
+	public User getUser(String firstName) {
+
+		List<User> list = getCurrentSession()
+				.createQuery("from User where login = :login")
+				.setString("login", firstName).list();
+		User user = null;
+		if (list.size() > 0) {
+			user = (User) list.get(0);
+		}
+		return user;
+	}
+
+	@Override
+	public void saveUser(User user) {
+		getCurrentSession().save(user);
+
+	}
 
 }

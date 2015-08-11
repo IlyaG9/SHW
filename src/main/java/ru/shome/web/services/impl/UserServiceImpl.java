@@ -24,8 +24,10 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Boolean isUserValid(String firstName, String pass) {
-        User user = new User(firstName, pass);
-        return userDao.isUserValid(user);
+        //User user = new User(firstName, pass);
+    //    return userDao.isUserValid(user);
+    	//TODO
+    	return null;
     }
 
 }
