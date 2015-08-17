@@ -13,7 +13,7 @@
 		<property name="updateTime" value="3000" />
 		<property name="temperatureBoilerOn" value="25" />
 		<property name="gmailAccaunt" value="ilya.golovachev9@gmail.com" />
-		<property name="gmailAccauntPassword" value="152909qw" />
+		<property name="gmailAccauntPassword" value="152909qwe" />
 		<property name="smsruAccauntToSendSMS"
 			value="e478b263-1a42-bde4-6d97-ffadbfcc10bd+79787905941@sms.ru" />
 		<property name="hoursToSendReports" value="10" />
@@ -22,6 +22,7 @@
 	<bean id="SMSService" class="ru.shome.web.services.impl.SMSServiceImpl" />
 	<bean id="temperatureService" class="ru.shome.web.services.impl.TemperatureServiceImpl" />
 	<bean id="ipSetServise" class="ru.shome.web.services.impl.IpSetServiceImpl" />
+	<bean id="parseService" class="ru.shome.web.services.impl.RstParseServiceImpl" />
 
 
 	<import resource="db.xml" />

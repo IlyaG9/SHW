@@ -58,7 +58,7 @@ public class SMSServiceImpl extends BaseService implements SMSService {
 						+ temperatureService.getBoilerTemperature() + "; ST:"
 						+ temperatureService.getStreetTemperature() + "; SH:"
 						+ temperatureService.getStreetHumidity() + "%";
-				sendSMS(text);
+				sendSMS(text,property);
 			}
 		};
 		// Текущая дата
@@ -74,23 +74,23 @@ public class SMSServiceImpl extends BaseService implements SMSService {
 		// миллисекунд)
 		timer.scheduleAtFixedRate(ttask, tomorrow, 86400000);
 
-		sendSMS("System SHWeb started");
+		sendSMS("System SHWeb started",property);
 	}
 
 	@Override
-	public synchronized void sendSMS(String text) {
+	public synchronized void sendSMS(String text,final Property pr) {
 		Session session = Session.getInstance(props, new Authenticator() {
 			@Override
 			protected PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication(property.getGmailAccaunt(),
-						property.getGmailAccauntPassword());
+				return new PasswordAuthentication(pr.getGmailAccaunt(),
+						pr.getGmailAccauntPassword());
 			}
 		});
 		try {
 			Message message = new MimeMessage(session);
 			message.setFrom(new InternetAddress("SHome"));
 			message.setRecipients(Message.RecipientType.TO,
-					InternetAddress.parse(property.getSmsruAccauntToSendSMS()));
+					InternetAddress.parse(pr.getSmsruAccauntToSendSMS()));
 			message.setSubject("SHWeb");
 			message.setText(text);
 			Transport.send(message);
