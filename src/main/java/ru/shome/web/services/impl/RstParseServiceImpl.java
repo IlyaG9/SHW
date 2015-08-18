@@ -12,6 +12,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import ru.shome.web.beans.Car;
 import ru.shome.web.beans.Property;
 import ru.shome.web.services.BaseService;
 import ru.shome.web.services.ParseService;
@@ -95,7 +96,7 @@ public class RstParseServiceImpl extends BaseService implements ParseService {
 
 	private void addCarToBase(Car car, String lastLink) throws IOException {
 		boolean r = car.getLink().equals(lastLink);
-		if (car.getLink() != null && !car.getLink().equals(lastLink)) {
+		if (car.getLink() != null && !car.getLink().equals(lastLink)&&car.getPrice()!=null&&!car.getPrice().equals("торг")&&Integer.valueOf(car.getPrice())<1500) {
 			String addLink = "http://shweb.hol.es/hol.es.db/addLink.php?link="
 					+ car.getLink() + "&name=" + car.getName() + "&site="
 					+ car.getSite() + "&price=" + car.getPrice();
@@ -111,59 +112,6 @@ public class RstParseServiceImpl extends BaseService implements ParseService {
 		return linkBlock.get(0).text();
 	}
 
-	static class Car {
-		private String link;
-		private String name;
-		private String price;
-		private String site;
-		private String year;
 
-		@Override
-		public String toString() {
-			return "Car [link=" + link + ", name=" + name + ", price=" + price
-					+ ", site=" + site + "]";
-		}
-
-		public String getYear() {
-			return year;
-		}
-
-		public void setYear(String year) {
-			this.year = year;
-		}
-
-		public String getLink() {
-			return link;
-		}
-
-		public void setLink(String link) {
-			this.link = link;
-		}
-
-		public String getName() {
-			return name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getPrice() {
-			return price;
-		}
-
-		public void setPrice(String price) {
-			this.price = price;
-		}
-
-		public String getSite() {
-			return site;
-		}
-
-		public void setSite(String site) {
-			this.site = site;
-		}
-
-	}
 
 }

@@ -7,29 +7,34 @@
 		<put-attribute name="body" value="" />
 	</definition>
 	<definition name="home" extends="base">
-	<put-attribute name="title" value="Температура и Влажность.Перевальное" />
+		<put-attribute name="title"
+			value="Температура и Влажность.Перевальное" />
 		<put-attribute name="body" value="/WEB-INF/tiles/jsp/home.jsp" />
 	</definition>
 	<definition name="userNotFound" extends="base">
-	<put-attribute name="title" value="Пользователь не найден" />
+		<put-attribute name="title" value="Пользователь не найден" />
 		<put-attribute name="body"
 			value="/WEB-INF/tiles/jsp/userNotFound.jsp" />
 	</definition>
 	<definition name="registration" extends="base">
-	<put-attribute name="title" value="Регистраия" />
+		<put-attribute name="title" value="Регистраия" />
 		<put-attribute name="body"
 			value="/WEB-INF/tiles/jsp/registration.jsp" />
 	</definition>
 	<definition name="temperature" extends="base">
-	<put-attribute name="title" value="Температура. Полный список" />
+		<put-attribute name="title" value="Температура. Полный список" />
 		<put-attribute name="body" value="/WEB-INF/tiles/jsp/temperature.jsp" />
 	</definition>
 	<definition name="webcam" extends="base">
-	<put-attribute name="title" value="Веб-камера. Орлиное ущелье" />
+		<put-attribute name="title" value="Веб-камера. Орлиное ущелье" />
 		<put-attribute name="body" value="/WEB-INF/tiles/jsp/webcam.jsp" />
 	</definition>
 	<definition name="signIn" extends="base">
-	<put-attribute name="title" value="Войти" />
+		<put-attribute name="title" value="Войти" />
 		<put-attribute name="body" value="/WEB-INF/tiles/jsp/signIn.jsp" />
+	</definition>
+	<definition name="car" extends="base">
+		<put-attribute name="title" value="Найденные авто" />
+		<put-attribute name="body" value="/WEB-INF/tiles/jsp/car/cars.jsp" />
 	</definition>
 </tiles-definitions>
