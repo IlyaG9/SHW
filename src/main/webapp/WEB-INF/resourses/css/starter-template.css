@@ -2,6 +2,19 @@ body {
     padding-top: 50px;
     text-align: center;
 }
+.content-area {
+     padding-top: 5%;
+     padding-bottom: 5%;
+     padding-left: 5%;
+     padding-right: 10%;
+   	 text-align: center;
+}
+
+.registration-area {
+     padding-left: 25%;
+     padding-right: 25%;
+}
+
 .starter-template {
     padding: 40px 15px;
     text-align: center;

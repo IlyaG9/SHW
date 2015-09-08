@@ -2,17 +2,32 @@ package ru.shome.web.beans;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "cars")
-public class Car implements Serializable{
+public class Car implements Serializable {
+
+	@Id
+	@Column(name = "car_id")
 	private Long id;
+	
+	@Column(name = "link")
 	private String link;
+	
+	@Column(name = "name")
 	private String name;
+	
+	@Column(name = "price")
 	private String price;
+	
+	@Column(name = "site")
 	private String site;
+	
+	@Column(name = "year")
 	private String year;
 
 	@Override
