@@ -10,7 +10,7 @@ import ru.shome.web.dao.CarDao;
 import ru.shome.web.services.CarService;
 
 
-@Service
+//@Service
 public class CarServiceImpl implements CarService {
 
 	@Autowired

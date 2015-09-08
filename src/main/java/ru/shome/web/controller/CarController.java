@@ -13,13 +13,13 @@ import ru.shome.web.services.CarService;
 @Controller
 public class CarController {
 
-	@Autowired
-	CarService carService;
+//	@Autowired
+//	CarService carService;
 
 	@RequestMapping(value = "/car")
 	public String findCarList(Model model) {
-		List<Car> carList = carService.getCarList(0, 10);
-		model.addAttribute("cars", carList);
+	//	List<Car> carList = carService.getCarList(0, 10);
+	//	model.addAttribute("cars", carList);
 		return "car";
 	}
 }

@@ -5,14 +5,21 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
+import javax.validation.constraints.Pattern;
 
 /**
  * Smart Home Project. ilya.golovachev9@gmail.com
  *
  * @author ILYA_GOLOVACHEV.
+ */
+/**
+ * @author ILYA
+ *
  */
 @Entity
 @Table(name = "users")
@@ -24,10 +31,12 @@ public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name = "user_id")
 	private Long id;
 
 	@Column(name = "first_name")
+	@Pattern(regexp = "^[a-zA-Zа-яА-Я]+$", message = "Must be alphabet with no space")
 	private String firstName;
 
 	@Column(name = "second_name")
@@ -51,6 +60,10 @@ public class User implements Serializable {
 	
 	@Column(name = "login",unique = true)
 	private String login;
+
+	public User() {
+		super();
+	}
 
 	public User(String firstName, String password) {
 		this.firstName = firstName;

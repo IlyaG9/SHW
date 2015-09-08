@@ -9,10 +9,10 @@ $(document).ready(function() {
         e.preventDefault();
     });
     $('#registartion').click(function() {
-        window.location.href = "./registration";
+        window.location.href = "./user/registration";
     });
     $('#logout').click(function() {
-        window.location.href = "./logout";
+        window.location.href = "./user/logout";
     });
 
     var userAgent = navigator.userAgent;

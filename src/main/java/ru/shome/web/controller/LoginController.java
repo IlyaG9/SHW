@@ -1,8 +1,15 @@
 package ru.shome.web.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import ru.shome.web.beans.User;
 import ru.shome.web.services.UserService;
 
 /**
@@ -11,6 +18,7 @@ import ru.shome.web.services.UserService;
  * @author ILYA_GOLOVACHEV.
  */
 @Controller
+@RequestMapping("/user")
 public class LoginController {
 
     @Autowired
@@ -29,9 +37,19 @@ public class LoginController {
 //
 //    }
     @RequestMapping(value = "/registration")
-    public String registartion() {
-
+    public String registartion(Model model) {
+    	User user=new User();
+    	model.addAttribute(user);
         return "registration";
+    }
+    
+    @RequestMapping(value = "/createNewUser", method = RequestMethod.POST)
+    public String createNewUser(@Valid User user,BindingResult bindingResult, Model model) {
+    	if (bindingResult.hasErrors()) {
+    		 return "registration";
+    	}
+    	userService.saveUser(user);
+    	 return "registrationComplite";
     }
 
     @RequestMapping(value = "/signIn")

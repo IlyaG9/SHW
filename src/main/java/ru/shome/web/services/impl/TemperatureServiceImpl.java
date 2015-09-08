@@ -162,7 +162,7 @@ public class TemperatureServiceImpl extends BaseService implements TemperatureSe
 
 	@Override
 	public void run() {
-		updateTemperature();
+	//	updateTemperature();
 		
 	}
 }
