@@ -1,6 +1,8 @@
 
 package ru.shome.web.dao;
 
+import java.util.List;
+
 import ru.shome.web.beans.User;
 
 /**
@@ -11,5 +13,8 @@ import ru.shome.web.beans.User;
 public interface UserDao {
 
    User getUser(String firstName);
-   void saveUser(User user);
+
+	void saveUser(User user);
+
+	List<User> getAllUsers();
 }

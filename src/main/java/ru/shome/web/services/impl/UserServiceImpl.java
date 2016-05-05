@@ -1,7 +1,10 @@
 package ru.shome.web.services.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import ru.shome.web.beans.User;
 import ru.shome.web.dao.UserDao;
 import ru.shome.web.services.UserService;
@@ -34,6 +37,11 @@ public class UserServiceImpl implements UserService {
 	public void saveUser(User user) {
 		userDao.saveUser(user);
 		
+	}
+
+	@Override
+	public List<User> getUserAllUsers() {
+		return userDao.getAllUsers();
 	}
 
 }

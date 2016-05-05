@@ -15,8 +15,11 @@
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="${pageContext.servletContext.contextPath}/">Домой</a></li>               
                     <li><a id="href-webcam" href="${pageContext.servletContext.contextPath}/webcam">Веб камера</a></li>
-                        <security:authorize access="hasRole('ROLE_ADMIN')">
+                        <security:authorize access="hasAnyRole('ROLE_USER','ROLE_ADMIN')">
                         <li><a href="${pageContext.servletContext.contextPath}/temperature">Температура</a></li>
+                        </security:authorize>
+                        <security:authorize access="hasAnyRole('ROLE_ADMIN')">
+                        <li><a href="${pageContext.servletContext.contextPath}/admin/users">Пользователи</a></li>
                         </security:authorize>
                 </ul>
             </div>

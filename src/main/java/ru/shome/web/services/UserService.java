@@ -1,6 +1,8 @@
 
 package ru.shome.web.services;
 
+import java.util.List;
+
 import ru.shome.web.beans.User;
 
 /**
@@ -13,4 +15,5 @@ public interface UserService {
     public User getUser(String firstName);
     public Boolean isUserValid(String firstName, String pass);
     public void saveUser(User user);
+    public List<User> getUserAllUsers();
 }

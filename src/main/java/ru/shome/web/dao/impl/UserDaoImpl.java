@@ -51,4 +51,11 @@ public class UserDaoImpl implements UserDao {
 
 	}
 
+	@Override
+	public List<User> getAllUsers() {
+		List<User> list = getCurrentSession().createQuery("from User ").list();
+
+		return list;
+	}
+
 }

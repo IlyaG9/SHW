@@ -41,4 +41,9 @@
 		<put-attribute name="title" value="Регистрация завершена" />
 		<put-attribute name="body" value="/WEB-INF/tiles/jsp/registrationComplite.jsp" />
 	</definition>
+	
+    <definition name="adminUsers" extends="base">
+		<put-attribute name="title" value="Пользователи" />
+		<put-attribute name="body" value="/WEB-INF/tiles/jsp/admin/adminUsers.jsp" />
+	</definition>
 </tiles-definitions>
