@@ -38,7 +38,7 @@
 		<put-attribute name="body" value="/WEB-INF/tiles/jsp/car/cars.jsp" />
 	</definition>
 	<definition name="registrationComplite" extends="base">
-		<put-attribute name="title" value="Найденные авто" />
+		<put-attribute name="title" value="Регистрация завершена" />
 		<put-attribute name="body" value="/WEB-INF/tiles/jsp/registrationComplite.jsp" />
 	</definition>
 </tiles-definitions>

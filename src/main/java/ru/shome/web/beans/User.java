@@ -2,12 +2,16 @@ package ru.shome.web.beans;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.validation.constraints.Pattern;
@@ -61,6 +65,10 @@ public class User implements Serializable {
 	@Column(name = "login",unique = true)
 	private String login;
 
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name = "user_id")
+	private List<UserGroup> userGroups;
+	
 	public User() {
 		super();
 	}
@@ -178,6 +186,14 @@ public class User implements Serializable {
 
 	public void setAdmin(Boolean admin) {
 		this.admin = admin;
+	}
+
+	public List<UserGroup> getUserGroups() {
+		return userGroups;
+	}
+
+	public void setUserGroups(List<UserGroup> userGroups) {
+		this.userGroups = userGroups;
 	}
 
 	@Override
