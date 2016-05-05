@@ -6,8 +6,9 @@
 ">
 	<!-- Поиск компонентов @Service, @Component -->
 	<context:component-scan base-package="ru.shome.web" />
+	
 	<bean id="property" class="ru.shome.web.beans.Property" scope="singleton">
-		<property name="arduinoURL" value="http://192.168.0.177" />
+		<property name="arduinoURL" value="http://192.168.0.81" />
 		<property name="programTitle" value="Smart Home System" />
 		<property name="runUpdateTime" value="2000" />
 		<property name="updateTime" value="3000" />
@@ -18,13 +19,7 @@
 			value="e478b263-1a42-bde4-6d97-ffadbfcc10bd+79787905941@sms.ru" />
 		<property name="hoursToSendReports" value="10" />
 	</bean>
-<!-- 
-	<bean id="SMSService" class="ru.shome.web.services.impl.SMSServiceImpl" />
-	<bean id="temperatureService" class="ru.shome.web.services.impl.TemperatureServiceImpl" />
-	<bean id="ipSetServise" class="ru.shome.web.services.impl.IpSetServiceImpl" />
-	<bean id="parseService" class="ru.shome.web.services.impl.RstParseServiceImpl" />
 
- -->
 	<import resource="db.xml" />
 	<import resource="spring-security.xml" />
 </beans>
