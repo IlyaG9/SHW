@@ -46,4 +46,9 @@
 		<put-attribute name="title" value="Пользователи" />
 		<put-attribute name="body" value="/WEB-INF/tiles/jsp/admin/adminUsers.jsp" />
 	</definition>
+	
+	 <definition name="userEdit" extends="base">
+		<put-attribute name="title" value="Редактирование пользователя" />
+		<put-attribute name="body" value="/WEB-INF/tiles/jsp/admin/userEdit.jsp" />
+	</definition>
 </tiles-definitions>

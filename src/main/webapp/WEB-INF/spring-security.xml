@@ -22,7 +22,7 @@ http://www.springframework.org/schema/security/spring-security-3.2.xsd">
 
 	<jdbc-user-service id="userService" data-source-ref="dataSource"
 		users-by-username-query="select login as username, password, active from users where login=?"
-		authorities-by-username-query="select u.login as username,  ug.group_description from users u JOIN users_user_group uug  JOIN user_group ug ON uug.users_user_id=u.user_id AND uug.userGroups_group_id=ug.group_id AND u.login=?" />
+		authorities-by-username-query="select u.login as username,  ug.group_identifier from users u JOIN users_user_group uug  JOIN user_group ug ON uug.users_user_id=u.user_id AND uug.userGroups_group_id=ug.group_id AND u.login=?" />
 
 	<authentication-manager>
 		<authentication-provider user-service-ref="userService" />

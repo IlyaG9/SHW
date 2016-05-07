@@ -2,6 +2,9 @@ package ru.shome.web.dao.impl;
 
 import java.util.List;
 
+import javax.jws.soap.SOAPBinding.Use;
+
+import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
 import org.hibernate.classic.Session;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,7 +50,7 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public void saveUser(User user) {
-		getCurrentSession().save(user);
+		getCurrentSession().saveOrUpdate(user);
 
 	}
 
@@ -56,6 +59,12 @@ public class UserDaoImpl implements UserDao {
 		List<User> list = getCurrentSession().createQuery("from User ").list();
 
 		return list;
+	}
+
+	@Override
+	public User getUserById(Long id) {
+		User object = (User) getCurrentSession().get(User.class, id);
+		return object;
 	}
 
 }

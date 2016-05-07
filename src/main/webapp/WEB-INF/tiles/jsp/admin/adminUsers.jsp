@@ -14,6 +14,7 @@
 				<th>Логин</th>
 				<th>Пароль</th>
 			<!-- 	<th>Группы</th> -->
+				<th>Редактировать</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -30,6 +31,7 @@
 		<%-- 		<td><c:forEach var="group" items="${user.userGroups}">
 						<c:out value="${group.groupIdentifier}" />; 
 					</c:forEach></td> --%>
+			 <td><a href="<c:out value="${pageContext.servletContext.contextPath}"/>/admin/userEdit/${user.id}">Изменить</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>

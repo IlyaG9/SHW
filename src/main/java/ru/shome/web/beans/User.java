@@ -16,6 +16,8 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.validation.constraints.Pattern;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 /**
  * Smart Home Project. ilya.golovachev9@gmail.com
  *
@@ -47,6 +49,7 @@ public class User implements Serializable {
 	private String secondName;
 
 	@Column(name = "birthdate")
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	@Temporal(javax.persistence.TemporalType.DATE)
 	private Date birthdate;
 	

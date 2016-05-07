@@ -17,31 +17,41 @@ import ru.shome.web.services.UserService;
 @Service
 public class UserServiceImpl implements UserService {
 
-    @Autowired
-    UserDao userDao;
+	@Autowired
+	UserDao userDao;
 
-    @Override
-    public User getUser(String firstName) {
-        return userDao.getUser(firstName);
-    }
+	@Override
+	public User getUser(String firstName) {
+		return userDao.getUser(firstName);
+	}
 
-    @Override
-    public Boolean isUserValid(String firstName, String pass) {
-        //User user = new User(firstName, pass);
-    //    return userDao.isUserValid(user);
-    	//TODO
-    	return null;
-    }
+	@Override
+	public Boolean isUserValid(String firstName, String pass) {
+		// User user = new User(firstName, pass);
+		// return userDao.isUserValid(user);
+		// TODO
+		return null;
+	}
 
 	@Override
 	public void saveUser(User user) {
 		userDao.saveUser(user);
-		
+
 	}
 
 	@Override
 	public List<User> getUserAllUsers() {
 		return userDao.getAllUsers();
+	}
+
+	@Override
+	public User getUserById(Long id) {
+		if (id > 0) {
+			return userDao.getUserById(id);
+		} else {
+			return null;
+		}
+
 	}
 
 }

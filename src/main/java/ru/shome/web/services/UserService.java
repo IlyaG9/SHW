@@ -12,6 +12,7 @@ import ru.shome.web.beans.User;
  */
 public interface UserService {
 
+	public User getUserById(Long id);
     public User getUser(String firstName);
     public Boolean isUserValid(String firstName, String pass);
     public void saveUser(User user);

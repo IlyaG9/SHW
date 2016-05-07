@@ -12,9 +12,11 @@ import ru.shome.web.beans.User;
  */
 public interface UserDao {
 
-   User getUser(String firstName);
+	 User getUserById(Long id);
+	 
+	 User getUser(String firstName);
 
-	void saveUser(User user);
+	 void saveUser(User user);
 
-	List<User> getAllUsers();
+	 List<User> getAllUsers();
 }
