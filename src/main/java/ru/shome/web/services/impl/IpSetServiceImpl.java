@@ -20,7 +20,7 @@ public class IpSetServiceImpl extends BaseService implements IpSetSerive {
 	}
 
 	@Override
-	public void run() {
+	public void go() {
 		Timer timer = new Timer();
         timer.schedule(new MyTimerTask(), 0, 600000);
 	}
@@ -104,6 +104,12 @@ public class IpSetServiceImpl extends BaseService implements IpSetSerive {
 		public void run() {
 			updateIp();
 		}
+	}
+
+	@Override
+	public boolean isEnabled() {
+
+		return false;
 	}
 
 }

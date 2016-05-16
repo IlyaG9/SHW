@@ -89,7 +89,7 @@ public class RstParseServiceImpl extends BaseService implements ParseService {
 	}
 
 	@Override
-	public void run() {
+	public void go() {
 		parse();
 
 	}
@@ -110,6 +110,12 @@ public class RstParseServiceImpl extends BaseService implements ParseService {
 				"http://shweb.hol.es/hol.es.db/getLink.php").get();
 		Elements linkBlock = doc.getElementsByTag("body");
 		return linkBlock.get(0).text();
+	}
+
+
+	@Override
+	public boolean isEnabled() {
+		return false;
 	}
 
 

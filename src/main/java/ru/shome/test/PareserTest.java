@@ -78,6 +78,7 @@ public class PareserTest {
 		}
 	}
 
+	@Deprecated
 	private static String getLastLink() throws IOException {
 		Document doc = Jsoup.connect(
 				"http://shweb.hol.es/hol.es.db/getLink.php").get();

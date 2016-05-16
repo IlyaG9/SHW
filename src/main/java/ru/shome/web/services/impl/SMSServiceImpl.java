@@ -106,8 +106,15 @@ public class SMSServiceImpl extends BaseService implements SMSService {
 	}
 
 	@Override
-	public void run() {
+	public void go() {
 		startReport();
+	}
+
+
+	@Override
+	public boolean isEnabled() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }

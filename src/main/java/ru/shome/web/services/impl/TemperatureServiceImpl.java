@@ -167,8 +167,13 @@ public class TemperatureServiceImpl extends BaseService implements
 	}
 
 	@Override
-	public void run() {
+	public void go() {
 		updateTemperature();
 
+	}
+
+	@Override
+	public boolean isEnabled() {
+		return false;
 	}
 }

@@ -13,7 +13,7 @@
 				<th>E-mail</th>
 				<th>Логин</th>
 				<th>Пароль</th>
-			<!-- 	<th>Группы</th> -->
+				<th>Группы</th>
 				<th>Редактировать</th>
 			</tr>
 		</thead>
@@ -28,9 +28,9 @@
 				<td><c:out value="${user.email}" /></td>
 				<td><c:out value="${user.login}" /></td>
 				<td><c:out value="${user.password}" /></td>
-		<%-- 		<td><c:forEach var="group" items="${user.userGroups}">
+				<td><c:forEach var="group" items="${user.userGroups}">
 						<c:out value="${group.groupIdentifier}" />; 
-					</c:forEach></td> --%>
+					</c:forEach></td> 
 			 <td><a href="<c:out value="${pageContext.servletContext.contextPath}"/>/admin/userEdit/${user.id}">Изменить</a></td>
 				</tr>
 			</c:forEach>
