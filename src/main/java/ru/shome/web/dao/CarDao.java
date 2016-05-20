@@ -2,9 +2,8 @@ package ru.shome.web.dao;
 
 import ru.shome.web.beans.Car;
 
-public interface CarDao extends BaseDao{
+public interface CarDao extends BaseDao<Car>{
 
 	Car getLastCar();
-	
 	
 }

@@ -18,7 +18,7 @@ import javax.mail.internet.MimeMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import ru.shome.web.beans.Property;
-import ru.shome.web.services.BaseService;
+import ru.shome.web.services.RunnubleService;
 import ru.shome.web.services.SMSService;
 import ru.shome.web.services.TemperatureService;
 import ru.shome.web.system.logger.SLogger;
@@ -29,7 +29,7 @@ import ru.shome.web.system.logger.SLogger.ErrLevel;
  *
  * @author ILYA_GOLOVACHEV.
  */
-public class SMSServiceImpl extends BaseService implements SMSService {
+public class SMSServiceImpl extends RunnubleService implements SMSService {
 
 	private Properties props = null;
 	@Autowired

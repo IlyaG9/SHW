@@ -14,11 +14,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import ru.shome.web.beans.Car;
 import ru.shome.web.beans.Property;
-import ru.shome.web.services.BaseService;
+import ru.shome.web.services.RunnubleService;
 import ru.shome.web.services.ParseService;
 import ru.shome.web.services.SMSService;
 
-public class RstParseServiceImpl extends BaseService implements ParseService {
+public class RstParseServiceImpl extends RunnubleService implements ParseService {
 	@Autowired
 	private Property property;
 	@Autowired

@@ -9,10 +9,10 @@ import java.net.URL;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import ru.shome.web.services.BaseService;
+import ru.shome.web.services.RunnubleService;
 import ru.shome.web.services.IpSetSerive;
 
-public class IpSetServiceImpl extends BaseService implements IpSetSerive {
+public class IpSetServiceImpl extends RunnubleService implements IpSetSerive {
 
 	public IpSetServiceImpl() {
 		super();

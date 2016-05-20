@@ -19,7 +19,7 @@ public class CarServiceImpl implements CarService {
 	@Override
 	public void saveCar(Car car) {
 		if (car.getLink() != null && car.getPrice() != null) {
-			carDao.save(car);
+			carDao.createOrUpdate(car);
 		}
 	}
 

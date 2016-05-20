@@ -3,17 +3,17 @@ package ru.shome.web.services.impl;
 import java.util.ArrayList;
 import java.util.List;
 
-import ru.shome.web.services.BaseService;
+import ru.shome.web.services.RunnubleService;
 
 public class ServiceFactory {
-	private static List<BaseService> serviceRegistry = new ArrayList<BaseService>();
+	private static List<RunnubleService> serviceRegistry = new ArrayList<RunnubleService>();
 
-	public static void reqisterService(BaseService service) {
+	public static void reqisterService(RunnubleService service) {
 		serviceRegistry.add(service);
 	}
 
 	public static void runServices() {
-		for (BaseService service : serviceRegistry) {
+		for (RunnubleService service : serviceRegistry) {
 			new Thread(service,service.getClass().getName()).start();
 		}
 	}

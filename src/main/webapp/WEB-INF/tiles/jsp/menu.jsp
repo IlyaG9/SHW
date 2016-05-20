@@ -21,6 +21,9 @@
                         <security:authorize access="hasAnyRole('ROLE_ADMIN')">
                         <li><a href="${pageContext.servletContext.contextPath}/admin/users">Пользователи</a></li>
                         </security:authorize>
+                        <security:authorize access="hasAnyRole('ROLE_ADMIN')">
+                        <li><a href="${pageContext.servletContext.contextPath}/admin/settings">Настройки</a></li>
+                        </security:authorize>
                 </ul>
             </div>
             <div class="btn-group navbar-right">

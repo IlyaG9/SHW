@@ -4,6 +4,8 @@ import java.util.List;
 
 
 public interface BaseDao<T> {
-	void save(Object objeect);
+	public void createOrUpdate(T object);
 	List<T> getWithPagination(int start,int max);
+	List<T> getAll();
+	T getById(Long id);
 }

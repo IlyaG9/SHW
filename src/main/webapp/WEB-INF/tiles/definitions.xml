@@ -51,4 +51,9 @@
 		<put-attribute name="title" value="Редактирование пользователя" />
 		<put-attribute name="body" value="/WEB-INF/tiles/jsp/admin/userEdit.jsp" />
 	</definition>
+	
+	 <definition name="settings" extends="base">
+		<put-attribute name="title" value="Настройки" />
+		<put-attribute name="body" value="/WEB-INF/tiles/jsp/admin/settings/settings.jsp" />
+	</definition>
 </tiles-definitions>

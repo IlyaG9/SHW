@@ -20,13 +20,13 @@ import com.google.gson.Gson;
 
 import ru.shome.web.beans.Property;
 import ru.shome.web.beans.Weather;
-import ru.shome.web.services.BaseService;
+import ru.shome.web.services.RunnubleService;
 import ru.shome.web.services.TemperatureService;
 import ru.shome.web.system.logger.SLogger;
 import ru.shome.web.system.logger.SLogger.ErrLevel;
 
 @Service
-public class TemperatureServiceImpl extends BaseService implements
+public class TemperatureServiceImpl extends RunnubleService implements
 		TemperatureService {
 
 	private Double holeTemperature = 0.00;
